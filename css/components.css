@@ -1,0 +1,493 @@
+/* Advanced Components */
+
+/* Enhanced Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 35px;
+    font-family: var(--font-sub);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-sm {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.btn-full { width: 100%; margin-top: 15px; }
+.w-100 { width: 100%; }
+
+.btn-primary {
+    background-color: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+}
+
+.btn-glow {
+    animation: solidGlow 2s infinite alternate;
+}
+
+.btn-primary:hover {
+    background-color: var(--neon-magenta);
+    border-color: var(--neon-magenta);
+    color: white;
+    box-shadow: 0 0 25px rgba(255, 0, 60, 0.8), 0 0 50px rgba(255, 0, 60, 0.4);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--neon-magenta);
+    color: var(--neon-magenta);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 0, 60, 0.15);
+    box-shadow: inset 0 0 15px rgba(255, 0, 60, 0.5), 0 0 20px rgba(255, 0, 60, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Skill Cards Improved */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    padding: 35px 25px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.card-glow {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 8px;
+    box-shadow: inset 0 0 20px rgba(0, 243, 255, 0);
+    transition: box-shadow 0.4s ease;
+    z-index: -1;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(0, 243, 255, 0.5);
+    z-index: 10;
+}
+
+.skill-card:hover .card-glow {
+    box-shadow: inset 0 0 30px rgba(0, 243, 255, 0.1);
+}
+
+.skill-icon {
+    font-size: 50px;
+    color: var(--neon-cyan);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.5));
+}
+
+.skill-card h3 {
+    margin-bottom: 20px;
+    font-family: var(--font-sub);
+    font-size: 22px;
+}
+
+.xp-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.xp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+    box-shadow: 0 0 10px var(--neon-green);
+    position: relative;
+}
+
+.xp-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    animation: shine 2s infinite;
+}
+
+/* Advanced Project Gallery */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    border-radius: 8px;
+    perspective: 1000px;
+    background: transparent;
+    border: none;
+}
+
+.project-card-inner {
+    background: rgba(11, 13, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.project-card:hover .project-card-inner {
+    transform: translateY(-15px);
+    border-color: rgba(255, 0, 60, 0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(255, 0, 60, 0.2);
+}
+
+.project-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-card:hover .img-overlay {
+    opacity: 1;
+}
+
+.scan-icon {
+    font-size: 40px;
+    color: var(--neon-magenta);
+    text-shadow: 0 0 15px var(--neon-magenta);
+    transform: scale(0.5);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .scan-icon {
+    transform: scale(1);
+}
+
+.project-info {
+    padding: 30px;
+}
+
+.project-info h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.project-tag {
+    font-family: var(--font-mono);
+    color: var(--neon-cyan);
+    background: rgba(0, 243, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+/* Contact Form UI */
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    color: var(--neon-cyan);
+    font-family: var(--font-sub);
+    font-size: 1.2rem;
+}
+
+.contact-header i { font-size: 24px; }
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-container input, .input-container textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 15px 15px 0;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.input-border {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 2px; width: 0;
+    background: var(--neon-cyan);
+    transition: width 0.4s ease;
+}
+
+.input-container input:focus, .input-container textarea:focus {
+    outline: none;
+    background: rgba(0, 243, 255, 0.05);
+}
+
+.input-container input:focus + .input-border, 
+.input-container textarea:focus + .input-border {
+    width: 100%;
+}
+
+/* Animations */
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes solidGlow {
+    0% { box-shadow: inset 0 0 5px rgba(0,243,255,0.2), 0 0 5px rgba(0,243,255,0.2); }
+    100% { box-shadow: inset 0 0 15px rgba(0,243,255,0.4), 0 0 20px rgba(0,243,255,0.6); }
+}
+
+.pulse-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; text-shadow: 0 0 15px currentColor; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.float-anim {
+    animation: floatAnim 4s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.blink {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Glitch Core Animation */
+.glitch { position: relative; }
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+.glitch::before {
+    left: 3px; text-shadow: -2px 0 var(--neon-magenta);
+    clip: rect(24px, 550px, 90px, 0); animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+.glitch::after {
+    left: -3px; text-shadow: -2px 0 var(--neon-cyan);
+    clip: rect(85px, 550px, 140px, 0); animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+.glitch-hover:hover { position: relative; }
+.glitch-hover:hover::before, .glitch-hover:hover::after {
+    content: attr(data-text);
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+.glitch-hover:hover::before {
+    left: 2px; text-shadow: -2px 0 var(--neon-magenta); clip: rect(24px, 550px, 90px, 0); animation: glitch-anim-2 0.4s infinite linear alternate-reverse;
+}
+.glitch-hover:hover::after {
+    left: -2px; text-shadow: -2px 0 var(--neon-cyan); clip: rect(85px, 550px, 140px, 0); animation: glitch-anim 0.3s infinite linear alternate-reverse;
+}
+
+/* Among Us Floating Doodles */
+.among-us-wrapper {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.crewmate {
+    position: absolute;
+    width: 60px;
+    height: 75px;
+    opacity: 0.85;
+}
+
+/* Animations for different crewmates */
+.doodle-1 { top: 20%; left: -10%; animation: drift-1 25s linear infinite; filter: drop-shadow(0 0 10px #ff003c); }
+.doodle-2 { top: 60%; right: -10%; animation: drift-2 30s linear infinite; filter: drop-shadow(0 0 10px #00f3ff); }
+.doodle-3 { bottom: -10%; left: 30%; animation: drift-3 20s linear infinite; filter: drop-shadow(0 0 10px #ffeb3b); }
+.doodle-4 { top: -10%; right: 40%; animation: drift-4 35s linear infinite; transform: scale(0.6); opacity: 0.5; filter: drop-shadow(0 0 10px #39ff14); }
+.doodle-5 { top: 80%; left: -10%; animation: drift-5 28s linear infinite; filter: drop-shadow(0 0 10px #b026ff); }
+.doodle-6 { bottom: -10%; right: 20%; animation: drift-6 22s linear infinite; filter: drop-shadow(0 0 10px #ff9800); }
+
+@keyframes drift-1 {
+    0% { transform: translate(0, 0) rotate(0deg); left: -10%; }
+    100% { transform: translate(140vw, -300px) rotate(360deg); left: 110%; }
+}
+@keyframes drift-2 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(0.8); right: -10%; }
+    100% { transform: translate(-140vw, 200px) rotate(-360deg) scale(0.8); right: 110%; }
+}
+@keyframes drift-3 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1.2); bottom: -10%; }
+    100% { transform: translate(300px, -120vh) rotate(180deg) scale(1.2); bottom: 110%; }
+}
+@keyframes drift-4 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(0.6); top: -10%; }
+    100% { transform: translate(-400px, 120vh) rotate(-270deg) scale(0.6); top: 110%; }
+}
+@keyframes drift-5 {
+    0% { transform: translate(0, 0) rotate(0deg); left: -10%; }
+    100% { transform: translate(140vw, 100px) rotate(180deg); left: 110%; }
+}
+@keyframes drift-6 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1.1); bottom: -10%; }
+    100% { transform: translate(-500px, -120vh) rotate(-360deg) scale(1.1); bottom: 110%; }
+}
+
+/* Experience Log */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid var(--neon-magenta);
+}
+
+.exp-card {
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.exp-card::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 30px;
+    width: 15px;
+    height: 15px;
+    background: var(--bg-dark);
+    border: 2px solid var(--neon-magenta);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-magenta);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+}
+
+.exp-header h3 {
+    color: var(--neon-cyan);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.exp-company {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.exp-date {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 14px;
+    background: rgba(255, 0, 60, 0.1);
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 0, 60, 0.3);
+}
+
+.exp-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.exp-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.exp-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--neon-cyan);
+    font-family: var(--font-mono);
+    font-weight: bold;
+}
+
+.skill-detail {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}

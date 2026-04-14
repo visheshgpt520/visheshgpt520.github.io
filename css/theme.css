@@ -1,0 +1,66 @@
+:root {
+    /* Deep dark space background */
+    --bg-darkest: #010204;
+    --bg-dark: #0b0d17;
+    --bg-darker: #05060b;
+    --bg-light: #15192b;
+    
+    /* Neon Colors */
+    --neon-cyan: #00f3ff;
+    --neon-magenta: #ff003c;
+    --neon-green: #39ff14;
+    
+    /* Texts */
+    --text-primary: #ffffff;
+    --text-secondary: #9da3ad;
+    
+    /* Typography */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-sub: 'Rajdhani', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000; /* Force pure black background */
+    /* Among Us Style Starfield: Sparse, tiny white dots only */
+    background-image: 
+      radial-gradient(1px 1px at 20% 30%, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 40% 70%, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 50% 10%, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 80% 40%, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 90% 80%, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 10% 90%, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(21, 25, 43, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 243, 255, 0.1);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-primary);
+}
