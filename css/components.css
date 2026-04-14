@@ -227,9 +227,9 @@
 /* Contact Form UI */
 .contact-box {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 30px 60px; /* Reduced vertical, maintained horizontal */
+    padding: 15px 40px; /* Bare minimum vertical padding for maximum length effect */
     border-radius: 0;
     position: relative;
     overflow: hidden;
