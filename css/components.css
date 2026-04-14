@@ -226,10 +226,10 @@
 
 /* Contact Form UI */
 .contact-box {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 50px;
-    border-radius: 8px;
+    border-radius: 0;
     position: relative;
     overflow: hidden;
 }
